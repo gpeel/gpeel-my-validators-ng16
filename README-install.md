@@ -1,4 +1,4 @@
-# My Usual setting for Angular 12
+# My Usual setting for Angular 16
 
 Here is a description of what was added to this project.
 
