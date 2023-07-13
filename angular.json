@@ -151,6 +151,112 @@
           }
         }
       }
+    },
+    "reactive0-simplest": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/reactive0-simplest",
+      "sourceRoot": "projects/reactive0-simplest/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/reactive0-simplest",
+            "index": "projects/reactive0-simplest/src/index.html",
+            "main": "projects/reactive0-simplest/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/reactive0-simplest/tsconfig.app.json",
+            "assets": [
+              "projects/reactive0-simplest/src/favicon.ico",
+              "projects/reactive0-simplest/src/assets"
+            ],
+            "styles": [
+              "projects/reactive0-simplest/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "projects/reactive0-simplest/src/environments/environment.ts",
+                  "with": "projects/reactive0-simplest/src/environments/environment.development.ts"
+                }
+              ]
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "reactive0-simplest:build:production"
+            },
+            "development": {
+              "browserTarget": "reactive0-simplest:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "reactive0-simplest:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/reactive0-simplest/tsconfig.spec.json",
+            "assets": [
+              "projects/reactive0-simplest/src/favicon.ico",
+              "projects/reactive0-simplest/src/assets"
+            ],
+            "styles": [
+              "projects/reactive0-simplest/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/reactive0-simplest/**/*.ts",
+              "projects/reactive0-simplest/**/*.html"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

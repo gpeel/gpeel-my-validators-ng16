@@ -12,6 +12,12 @@ https://angular.io/guide/creating-libraries
             ng generate library @gpeel/my-validators
             ng build @gpeel/my-validators
 
+For multiple project
+
+- https://angular.io/guide/file-structure#multiple-projects
+
+        ng generate application my-first-app
+
 https://angular.io/guide/creating-libraries#managing-assets-in-a-library
 Managing assets in a library Starting with version 9.x of the ng-packagr tool, you can configure the tool to
 automatically copy assets into your library package as part of the build process. You can use this feature when your
