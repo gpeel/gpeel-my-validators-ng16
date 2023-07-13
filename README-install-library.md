@@ -54,61 +54,6 @@ If you Don'T want to build, but have you lib as simple sources, now you can chan
     },
 ````
 
-##            
-
-In the lib .eslintrc.json the generated path is wrong, change it from :
-line 2
-
-    "extends": "../../.eslintrc.json",
-
-to :
-
-    "extends": "../../../.eslintrc.json",
-
-And also later tsconfig paths are wrong. FORM
-
-````json
-{
-  "extends": "../../.eslintrc.json",
-  "ignorePatterns": [
-    "!**/*"
-  ],
-  "overrides": [
-    {
-      "files": [
-        "*.ts"
-      ],
-      "parserOptions": {
-        "project": [
-          "projects/gpeel/my-validators/tsconfig.lib.json",
-          "projects/gpeel/my-validators/tsconfig.spec.json"
-        ],
-        "createDefaultProgram": true
-      },
-````
-
-TO CORRECT VERSION :
-
-````json
-{
-  "extends": "../../../.eslintrc.json",
-  "ignorePatterns": [
-    "!**/*"
-  ],
-  "overrides": [
-    {
-      "files": [
-        "*.ts"
-      ],
-      "parserOptions": {
-        "project": [
-          "tsconfig.lib.json",
-          "tsconfig.spec.json"
-        ],
-        "createDefaultProgram": true
-      },
-````
-
 ## npm login
 
 You should do it ONCE on your machine:

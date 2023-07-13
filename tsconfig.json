@@ -4,7 +4,7 @@
   "compilerOptions": {
     "paths": {
       "@gpeel/my-validators": [
-        "dist/gpeel/my-validators"
+        "projects/gpeel/my-validators/src/public-api.ts"
       ]
     },
     "baseUrl": "./",
