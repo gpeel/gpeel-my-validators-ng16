@@ -470,112 +470,6 @@
         }
       }
     },
-    "reactive4-i18n-transloco": {
-      "projectType": "application",
-      "schematics": {},
-      "root": "projects/reactive4-i18n-transloco",
-      "sourceRoot": "projects/reactive4-i18n-transloco/src",
-      "prefix": "app",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/reactive4-i18n-transloco",
-            "index": "projects/reactive4-i18n-transloco/src/index.html",
-            "main": "projects/reactive4-i18n-transloco/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
-            "tsConfig": "projects/reactive4-i18n-transloco/tsconfig.app.json",
-            "assets": [
-              "projects/reactive4-i18n-transloco/src/favicon.ico",
-              "projects/reactive4-i18n-transloco/src/assets"
-            ],
-            "styles": [
-              "projects/reactive4-i18n-transloco/src/styles.css"
-            ],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
-                }
-              ],
-              "outputHashing": "all"
-            },
-            "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true,
-              "fileReplacements": [
-                {
-                  "replace": "projects/reactive4-i18n-transloco/src/environments/environment.ts",
-                  "with": "projects/reactive4-i18n-transloco/src/environments/environment.development.ts"
-                }
-              ]
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "configurations": {
-            "production": {
-              "browserTarget": "reactive4-i18n-transloco:build:production"
-            },
-            "development": {
-              "browserTarget": "reactive4-i18n-transloco:build:development"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "reactive4-i18n-transloco:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
-            "tsConfig": "projects/reactive4-i18n-transloco/tsconfig.spec.json",
-            "assets": [
-              "projects/reactive4-i18n-transloco/src/favicon.ico",
-              "projects/reactive4-i18n-transloco/src/assets"
-            ],
-            "styles": [
-              "projects/reactive4-i18n-transloco/src/styles.css"
-            ],
-            "scripts": []
-          }
-        },
-        "lint": {
-          "builder": "@angular-eslint/builder:lint",
-          "options": {
-            "lintFilePatterns": [
-              "projects/reactive4-i18n-transloco/**/*.ts",
-              "projects/reactive4-i18n-transloco/**/*.html"
-            ]
-          }
-        }
-      }
-    },
     "reactive5-template-if-you-really-want": {
       "projectType": "application",
       "schematics": {},
@@ -777,6 +671,112 @@
             "lintFilePatterns": [
               "projects/reactive3-flexible-validators/**/*.ts",
               "projects/reactive3-flexible-validators/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "reactive4-i18n-transloco-scss": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/reactive4-i18n-transloco-scss",
+      "sourceRoot": "projects/reactive4-i18n-transloco-scss/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/reactive4-i18n-transloco-scss",
+            "index": "projects/reactive4-i18n-transloco-scss/src/index.html",
+            "main": "projects/reactive4-i18n-transloco-scss/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/reactive4-i18n-transloco-scss/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/reactive4-i18n-transloco-scss/src/favicon.ico",
+              "projects/reactive4-i18n-transloco-scss/src/assets"
+            ],
+            "styles": [
+              "projects/reactive4-i18n-transloco-scss/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "reactive4-i18n-transloco-scss:build:production"
+            },
+            "development": {
+              "browserTarget": "reactive4-i18n-transloco-scss:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "reactive4-i18n-transloco-scss:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/reactive4-i18n-transloco-scss/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/reactive4-i18n-transloco-scss/src/favicon.ico",
+              "projects/reactive4-i18n-transloco-scss/src/assets"
+            ],
+            "styles": [
+              "projects/reactive4-i18n-transloco-scss/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/reactive4-i18n-transloco-scss/**/*.ts",
+              "projects/reactive4-i18n-transloco-scss/**/*.html"
             ]
           }
         }

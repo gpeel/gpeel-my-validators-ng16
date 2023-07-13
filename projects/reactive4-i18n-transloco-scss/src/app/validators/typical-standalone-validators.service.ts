@@ -30,13 +30,13 @@ export class TypicalStandaloneValidatorsService implements MyValidatorsServiceIn
 
   /// ALL COPIED FROM
 
-
   email = (control: AbstractControl): ValidationErrors | null => {
     const va = Validators.email(control);
     if (va) {
       // if the Token MY_MESSAGES_SERVICE_API is not provided, I fallback to hard-coded messages in English
       let i18nMsg = 'the field should be a valid email';
       if (this.myMessagesService) {
+        // @ts-ignore
         i18nMsg = this.myMessagesService.getValidationMessageFor('email', va.email);
       }
       return {email: {msg: i18nMsg}};
@@ -50,10 +50,14 @@ export class TypicalStandaloneValidatorsService implements MyValidatorsServiceIn
     const f = (control: AbstractControl): ValidationErrors | null => {
       const va = maxClosure(control);
       if (va) {
+
+        // @ts-ignore
         let i18nMsg = `the number must be more or equal than ${va.max}`;
         if (this.myMessagesService) {
+          // @ts-ignore
           i18nMsg = this.myMessagesService.getValidationMessageFor('max', va.max);
         }
+        // @ts-ignore
         return {max: {...va.max, msg: i18nMsg}};
       } else {
         return null;
@@ -67,10 +71,13 @@ export class TypicalStandaloneValidatorsService implements MyValidatorsServiceIn
     const f = (control: AbstractControl): ValidationErrors | null => {
       const va = minClosure(control);
       if (va) {
+        // @ts-ignore
         let i18nMsg = `the number must be less or equal than ${va.min}`;
         if (this.myMessagesService) {
+          // @ts-ignore
           i18nMsg = this.myMessagesService.getValidationMessageFor('min', va.main);
         }
+        // @ts-ignore
         return {min: {...va.min, msg: i18nMsg}};
       } else {
         return null;
@@ -84,10 +91,13 @@ export class TypicalStandaloneValidatorsService implements MyValidatorsServiceIn
     const f = (control: AbstractControl): ValidationErrors | null => {
       const va = maxClosure(control);
       if (va) {
+        // @ts-ignore
         let i18nMsg = `the length should be less than ${va.requiredLength} characters`;
         if (this.myMessagesService) {
+          // @ts-ignore
           i18nMsg = this.myMessagesService.getValidationMessageFor('maxlength', va.maxlength);
         }
+        // @ts-ignore
         return {maxlength: {...va.maxlength, msg: i18nMsg}};
       } else {
         return null;
@@ -96,16 +106,18 @@ export class TypicalStandaloneValidatorsService implements MyValidatorsServiceIn
     return f;
   };
 
-
   minLength = (minLength: number): ValidatorFn => {
     const minClosure = Validators.minLength(minLength);
     const f = (control: AbstractControl): ValidationErrors | null => {
       const va = minClosure(control);
       if (va) {
+        // @ts-ignore
         let i18nMsg = `the length should be more than ${va.requiredLength} characters`;
         if (this.myMessagesService) {
+          // @ts-ignore
           i18nMsg = this.myMessagesService.getValidationMessageFor('minlength', va.minlength);
         }
+        // @ts-ignore
         return {minlength: {...va.minlength, msg: i18nMsg}};
       } else {
         return null;
@@ -141,10 +153,13 @@ export class TypicalStandaloneValidatorsService implements MyValidatorsServiceIn
     const f = (control: AbstractControl): ValidationErrors | null => {
       const va = pattClosure(control);
       if (va) {
+        // @ts-ignore
         let i18nMsg = `the field should respect the pattern ${va.requiredPattern}`;
         if (this.myMessagesService) {
+          // @ts-ignore
           i18nMsg = this.myMessagesService.getValidationMessageFor('pattern', va.pattern);
         }
+        // @ts-ignore
         return {pattern: {...va.pattern, msg: i18nMsg}};
       } else {
         return null;
@@ -158,6 +173,7 @@ export class TypicalStandaloneValidatorsService implements MyValidatorsServiceIn
     if (va) {
       let i18nMsg = 'the field is required';
       if (this.myMessagesService) {
+        // @ts-ignore
         i18nMsg = this.myMessagesService.getValidationMessageFor('required', va.required);
       }
       return {required: {msg: i18nMsg}};
@@ -171,6 +187,7 @@ export class TypicalStandaloneValidatorsService implements MyValidatorsServiceIn
     if (va) {
       let i18nMsg = 'the field should be true';
       if (this.myMessagesService) {
+        // @ts-ignore
         i18nMsg = this.myMessagesService.getValidationMessageFor('requiredTrue', va.required);
       }
       return {required: {msg: i18nMsg}};
@@ -178,6 +195,5 @@ export class TypicalStandaloneValidatorsService implements MyValidatorsServiceIn
       return null;
     }
   };
-
 
 }

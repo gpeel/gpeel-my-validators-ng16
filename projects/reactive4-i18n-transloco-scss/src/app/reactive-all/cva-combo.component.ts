@@ -30,17 +30,17 @@ import {ControlValueAccessor, FormControl, NgControl} from '@angular/forms';
   `,
   styles: [
     `
-      //.ng-invalid.ng-dirty, .ng-invalid.ng-touched {
-      //  border-color: red;
-      //}
+        /*//.ng-invalid.ng-dirty, .ng-invalid.ng-touched {*/
+        /*//  border-color: red;*/
+        /*//}*/
 
-      // I HAVE to redeclare here the style because style are NOT inherited
-      // from their father component in the DOM
-      @import "../../../../../node_modules/bootstrap/scss/bootstrap.scss";
+        /*// I HAVE to redeclare here the style because style are NOT inherited*/
+        /*// from their father component in the DOM*/
+        @import "../../../../../node_modules/bootstrap/scss/bootstrap.scss";
 
-      .ng-invalid.ng-dirty, .ng-invalid.ng-touched {
-        @extend .is-invalid;
-      }
+        .ng-invalid.ng-dirty, .ng-invalid.ng-touched {
+            @extend .is-invalid;
+        }
 
     `
   ],
@@ -62,12 +62,11 @@ export class CvaComboComponent implements OnInit, ControlValueAccessor {
   @HostBinding('attr.id')
   externalId = null;
 
-  @Input() id: string = '';
+  @Input() id = '';
 
   @Output() selectionChange = new EventEmitter<number>();
   @Input() options: any[] = [];
   formControl!: FormControl;
-
 
   constructor(private ngControl: NgControl,
               private cd: ChangeDetectorRef,

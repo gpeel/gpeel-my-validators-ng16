@@ -1,0 +1,13 @@
+{
+  "pristineForm": "Your form is pristine! No action executed",
+  "invalidForm": "You must correct your form before saving it",
+  "forbiddenName": "The word {{forbiddenName}} is forbidden !",
+  "email": "this field should be a valid email",
+  "required": "The field is required",
+  "requiredTrue": "This field should be true",
+  "max": "This number should be at least  {{max}}",
+  "min": "This number should be at most {{min}}",
+  "minlength": "The length should be at least {{requiredLength}}",
+  "maxlength": "The length should be less that {{requiredLength}}",
+  "pattern": "This field should respect the pattern {{requiredPattern}}"
+}

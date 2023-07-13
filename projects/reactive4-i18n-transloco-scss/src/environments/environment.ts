@@ -1,5 +1,5 @@
 export const environment = {
-
+  production : true,
   plog: {
     // debug: 'color:limegreen',
     // info: 'color:blue',
