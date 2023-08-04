@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 import {AbstractControl} from '@angular/forms';
 import {Plog} from '@gpeel/plog';
-import {merge, Subscription} from 'rxjs';
+import {debounceTime, merge, Subscription} from 'rxjs';
 import {MY_SHOW_ERROR_MSG_FUNCTION_API, ShowFunction} from '../pluggable-api/messages/messages-service-api';
 import {ErrorMsgFn, ErrorMsgMap} from './error-msg-api';
 
@@ -154,10 +154,11 @@ export class MyErrorMessageComponent implements OnDestroy, AfterViewInit {
     // subscribing to this.control.statusChanges seems redundant
     // it is ! for sync validators
     // But for async validators the value was changed much before, so we need to be triggered when validity comes back.
-    // Sinci async only execute when sync are ok, if there is a change means errors coming back.
+    // Since async only execute when sync are ok, if there is a change means errors coming back.
     this.subscription = merge(this.control.valueChanges, this.control.statusChanges)
-      // .pipe(debounceTime(this.adebounce)) // see comment above, why this line is NOT interresting
-      // Also following seems interresting BUT when makeDirty a form which resends the new valueChanges
+      .pipe(debounceTime(10)) // very short denounce to avoid  this.control.valueChanges, this.control.statusChanges to trigger 2 computes
+      // .pipe(debounceTime(this.adebounce))
+      // Also following seems interresting BUT when "makeDirty" a form which resends the new valueChanges
       // will no longer reach the cd.markForCheck, it was meant for !
       // .pipe(
       //   map(() => this.control.errors),
