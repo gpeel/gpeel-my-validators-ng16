@@ -10,6 +10,7 @@
     "start:3": "ng serve -o --port=5300 reactive3-flexible-validators",
     "start:4": "ng serve -o --port=5400 reactive4-i18n-transloco-scss",
     "start:5": "ng serve -o --port=5500 reactive5-template-if-you-really-want",
+    "start:6": "ng serve -o --port=5600 simplest-framework-ideas",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
