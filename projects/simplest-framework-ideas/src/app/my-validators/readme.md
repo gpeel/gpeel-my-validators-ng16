@@ -23,8 +23,5 @@ errors for each standard validators:
 
         { msg  : 'the validation error message' }
 
-I propose better more flexible solutions.
-
-In Solution 2 is a better delegate pattern still containing hard coded error messages
-
-And in Solution 3 a completely customizable solution.
+But I also propose better more flexible solutions suing services containing the validators. In a service you can easily
+connect to a i18n framework.

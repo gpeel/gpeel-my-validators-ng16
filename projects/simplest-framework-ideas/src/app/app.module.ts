@@ -28,6 +28,9 @@ import {ReactiveAllComponent} from './reactive-all/reactive-all.component';
   ],
   providers: [
     {
+      // eanble to have a feedback when submitting a form with errors
+      // otherwise, the form is submitted and the errors are displayed but no alert is shown
+      // comment this provider to see the difference
       provide: MY_ALERT_SERVICE_API,
       useClass: AlertWithSimpleLogService,
     }
